@@ -1,0 +1,14 @@
+{
+  "token": "",
+  "clientId": "",
+  
+  "admins": [""],
+  "support": [""],
+
+  "spotifyId": "",
+  "spotifySecret": "",
+
+  "w2g_api_key": "",
+
+  "production": false
+}
