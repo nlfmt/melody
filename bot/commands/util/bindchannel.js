@@ -67,14 +67,14 @@ module.exports = {
             case 'add':
                 if (ids.includes(id)) return reply.warn('This channel is already bound.');
                 ids.push(id);
-                logger.info(`Binding channel ${id} in guild '${i.member.guild.name}'`);
+                logger.info(`[${i.member.guild.name}] Binding channel ${id}`);
                 break;
             case 'remove':
                 ids = ids.filter(x => x !== id);
-                logger.info(`Unbinding channel ${id} in guild '${i.member.guild.name}'`);
+                logger.info(`[${i.member.guild.name}] Unbinding channel ${id}`);
                 break;
             case 'clear':
-                logger.info(`Clearing bound channels in guild '${i.member.guild.name}'`);
+                logger.info(`[${i.member.guild.name}] Cleared bound channels`);
                 ids = [];
                 break;
             case 'list':

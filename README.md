@@ -19,7 +19,7 @@
 2. Install dependencies with `npm install`
 3. Fill in the config.json file
     - you need a [discord developer account](https://discord.com/login?redirect_to=%2Fdevelopers) and a discord application.
-    - you need a [spotify developer account](https://developer.spotify.com/dashboard/applications).
+    - for spotify support, you need a [spotify developer account](https://developer.spotify.com/dashboard/applications).
     - optionally you need a [Watch2Gether](https://w2g.tv/auth/sign_up) account.
 4. Register all slash commands to your application with `npm run register`
 5. Run the bot with `npm start`

@@ -17,7 +17,7 @@ const ansiEscRegEx = /\u001b\[\d+m/g;
 if (config.production === true) {
     const fstream = fs.createWriteStream('musicbot.log');
     const fsw = fstream.write.bind(fstream);
-    
+
     // replace write functions and filter out ansi escape codes
     process.stdout.write = process.stderr.write = (...args) => {
         fsw(...args.map(a => {
@@ -27,9 +27,20 @@ if (config.production === true) {
     }
 }
 
-if (!config.token || !config.clientId || !config.spotifyId || !config.spotifySecret) {
+const plugins = [];
+
+if (!config.token || !config.clientId) {
     logger.error('Missing token or clientId in config.json');
     process.exit(0);
+}
+if (!config.spotifyId || !config.spotifySecret) {
+    logger.warn('Missing spotifyId or spotifySecret in config.json, disabling Spotify support.');
+}
+else {
+    plugins.push(new Spotify({
+        clientID: config.spotifyId,
+        clientSecret: config.spotifySecret
+    }));
 }
 
 // Initialize the bot
@@ -53,12 +64,7 @@ bot.manager = new Manager({
         const guild = bot.guilds.cache.get(id);
         if (guild) guild.shard.send(payload);
     },
-    plugins: [
-        new Spotify({
-            clientID: bot.config.spotifyId,
-            clientSecret: bot.config.spotifySecret
-        })
-    ]
+    plugins: plugins
 });
 
 

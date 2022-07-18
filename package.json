@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bot/index.js",
-    "register": "node ./bot/deploy-commands.js"
+    "register": "node ./bot/register-commands.js"
   },
   "author": "Tom F. (github.com/nlfmt)",
   "license": "MIT",
@@ -17,7 +17,6 @@
     "erela.js": "^2.3.3",
     "erela.js-spotify": "^1.2.0",
     "moment": "^2.29.1",
-    "node-fetch": "^3.2.0",
     "string-pixel-width": "^1.10.0"
   }
 }

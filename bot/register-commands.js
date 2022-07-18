@@ -7,7 +7,7 @@
 */
 
 
-const USAGE = 
+const USAGE =
 `Usage: npm run register -- [clear] [guild_id]
     clear (optional): If specified, will clear the commands from the guild/application.
     guild_id (optional): The guild ID to register the commands to. Leave empty to register to the application.`
